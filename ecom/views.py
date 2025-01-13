@@ -8,9 +8,9 @@ from django.contrib import messages
 from django.conf import settings
 
 def home_view(request):
-    products=models.Product.objects.all()
+    products= None #models.Product.objects.all()
     
-    return render(request,'ecom/index.html',{'products':products,'product_count_in_cart':1})
+    return render(request,'ecom/index.html',{'products':products,'product_count_in_cart':0})
     
 
 
@@ -199,8 +199,8 @@ def view_feedback_view(request):
 #---------------------------------------------------------------------------------
 def search_view(request):
     # whatever user write in search box we get in query
-    query = request.GET['query']
-    products=models.Product.objects.all().filter(name__icontains=query)
+    #query = request.GET['query']
+    products= None #models.Product.objects.all() #.filter(name__icontains=query)
     if 'product_ids' in request.COOKIES:
         product_ids = request.COOKIES['product_ids']
         counter=product_ids.split('|')
