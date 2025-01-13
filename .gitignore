@@ -1,0 +1,23 @@
+# Clacky-related configuration
+
+.1024*
+!.1024
+.breakpoints
+
+# Language-specific
+__pycache__/
+*.py[cod]
+*.so
+
+# Package directories
+
+env/
+venv/
+ENV/
+*.pyc
+
+# Framework-related
+
+*.log
+*.sqlite3
+.DS_Store
