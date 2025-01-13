@@ -6,11 +6,14 @@ from django.contrib.auth.models import Group
 from django.contrib.auth.decorators import login_required,user_passes_test
 from django.contrib import messages
 from django.conf import settings
+from .models import Product
 
 def home_view(request):
-    products= None #models.Product.objects.all()
-    
-    return render(request,'ecom/index.html',{'products':products,'product_count_in_cart':0})
+    products = Product.objects.all()
+    return render(request, 'ecom/index.html', {
+        'products': products,
+        'product_count_in_cart': 0
+    })
     
 
 
