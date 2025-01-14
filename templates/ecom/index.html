@@ -384,6 +384,15 @@ img {
 
 <div class="row">
   <div class="col-md-12">
+    <form method="get" action="{% url 'search' %}" class="text-center mb-4">
+      <input type="text" name="query" placeholder="Search products..." class="form-control w-50 mx-auto">
+      <button type="submit" class="btn btn-primary mt-2">Search</button>
+    </form>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
     <div class="slider-container">
       <div class="menu">
         <label for="slide-dot-1"></label>

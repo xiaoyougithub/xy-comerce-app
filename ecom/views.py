@@ -202,14 +202,14 @@ def view_feedback_view(request):
 #---------------------------------------------------------------------------------
 def search_view(request):
     # whatever user write in search box we get in query
-    #query = request.GET['query']
-    products= None #models.Product.objects.all() #.filter(name__icontains=query)
+    query = request.GET.get('query','')
+    products = models.Product.objects.filter(name__icontains=query) if query else None
     if 'product_ids' in request.COOKIES:
         product_ids = request.COOKIES['product_ids']
-        counter=product_ids.split('|')
-        product_count_in_cart=len(set(counter))
+        counter = product_ids.split('|')
+        product_count_in_cart = len(set(counter))
     else:
-        product_count_in_cart=0
+        product_count_in_cart = 0
 
     # word variable will be shown in html when user click on search button
     word="Searched Result :"
